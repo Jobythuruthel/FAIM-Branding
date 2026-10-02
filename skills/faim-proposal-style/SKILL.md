@@ -21,6 +21,7 @@ Everything below sits inside this skill folder.
 | `assets/faim-icon.svg` | The connector icon, official vector. Hero use only, once per piece. |
 | `assets/faim-seal-black.png`, `assets/faim-seal-white.png` | The seal, for light and dark surfaces. Acceptance or closing page only. |
 | `templates/faim-proposal-summary.html` | Interactive 16:9 technology presentation, 15 slides, dark mode with FAIM Motion. Loads images from `../assets/`. |
+| `templates/faim-proposal-summary-white.html` | The same 15 slide summary deck in white document style: black logo, no motion, prints clean. Use it when the deck will be printed, sent as a PDF or read by a conservative client. |
 | `templates/faim-proposal-document.html` | Long form A4 proposal, prints to PDF. Loads images from `../assets/`. |
 | `templates/*.standalone.html` | The same two files with every image embedded. Send these to people. |
 | `templates/faim-proposal-document.docx` | Long form proposal for Word. |
