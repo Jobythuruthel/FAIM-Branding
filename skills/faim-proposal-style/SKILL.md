@@ -1,6 +1,6 @@
 ---
 name: faim-proposal-style
-description: FAIM house style for client proposals, proposal summary decks and scope documents. Use whenever writing or designing a FAIM proposal, pitch summary, scope of work, timeline, investment page or any client facing document that should look clean, white, vector and human written. Covers layout grid, type hierarchy, colour rules, component catalogue, image placeholders, copy style and an anti AI look checklist. Templates live in /templates.
+description: FAIM house style and ready templates for client proposals, proposal summary decks, interactive technology presentations, scope of work and investment documents. Use this whenever anyone asks for a FAIM proposal, pitch, deck, quote, scope, timeline or client facing document, or mentions FAIM branding, the FAIM logo, seal or icon, even if they do not say "style" or "template". Covers logo and icon rules, white document mode, dark technology mode with holographic motion, grid, type, colour, components, placeholders, humanised copy and an anti AI look checklist. Ships the logo, seal, icon, HTML deck, A4 document and Word template.
 ---
 
 # FAIM Proposal Style
@@ -11,13 +11,30 @@ This style is adapted from a strong consulting style proposal pack and rebuilt o
 
 ## 1. Files
 
+Everything below sits inside this skill folder.
+
 | File | Use |
 |---|---|
-| `tokens.css` | Colour, type, space and shape tokens. Copy into any new page. |
-| `/templates/faim-proposal-summary.html` | Interactive 16:9 technology presentation, 15 slides, dark mode with motion. Built from `/templates/src/` by `tools/build-deck.py`. |
-| `/templates/faim-proposal-document.html` | Long form A4 proposal, prints to PDF. |
-| `/templates/faim-proposal-document.docx` | Same long form proposal for Word. |
-| `/assets/` | Black logo, white logo, icon, seal. See `assets/README.md`. |
+| `tokens.css` | Colour, type, space and shape tokens. White document tokens at the top, technology mode (`.tech`) at the bottom. |
+| `assets/faim-logo-black.png` | Original FAIM logo, for white and light surfaces. |
+| `assets/faim-logo-white.png` | Same logo with white letters, for black and dark surfaces. |
+| `assets/faim-icon.svg` | The connector icon, official vector. Hero use only, once per piece. |
+| `assets/faim-seal-black.png`, `assets/faim-seal-white.png` | The seal, for light and dark surfaces. Acceptance or closing page only. |
+| `templates/faim-proposal-summary.html` | Interactive 16:9 technology presentation, 15 slides, dark mode with FAIM Motion. Loads images from `../assets/`. |
+| `templates/faim-proposal-document.html` | Long form A4 proposal, prints to PDF. Loads images from `../assets/`. |
+| `templates/*.standalone.html` | The same two files with every image embedded. Send these to people. |
+| `templates/faim-proposal-document.docx` | Long form proposal for Word. |
+| `templates/src/faim-proposal-summary.src.html` | Editable deck source. The motion engine is injected at build time. |
+| `scripts/build-deck.py` | Rebuilds the deck from source and writes both standalone files. Run `python3 scripts/build-deck.py` from the skill folder. |
+| `scripts/build-docx.js` | Rebuilds the Word file. Needs the `docx` npm package: `NODE_PATH=$(npm root -g) node scripts/build-docx.js`. |
+
+## How to make a new proposal
+
+1. Copy the skill's `templates/` and `assets/` folders into the working folder, keeping them side by side so `../assets/` resolves.
+2. Fill the placeholders. Every placeholder is in `[Square Brackets]`. On the deck, edit the content arrays at the top of the second script in `templates/src/faim-proposal-summary.src.html`, not the markup.
+3. Set the case fonts in `--font-display` and `--font-body`.
+4. Run `python3 scripts/build-deck.py` to produce the standalone files, and the Word script if the Word file is needed.
+5. Open each output in a browser, look at every page, then run sections 10 and 11 below before sending.
 
 ## 2. Logo and icon usage
 
@@ -35,7 +52,7 @@ These rules are fixed. They override anything else in this file.
 - Minimum size: 120px wide on screen, 30mm in print, so the tagline stays legible.
 - Placement: deck covers top left, inner slides top right. Documents top left on every page.
 - **The icon** (`faim-icon.svg`, the connector on its own) is a hero device, not a pattern. Use it case by case, at most once per document or deck, usually on the cover. Never as a bullet, a placeholder corner, a divider, a watermark or a background tile. Never next to the full logo at a similar size.
-- **The seal** goes only on the acceptance or signature page.
+- **The seal** goes only on the acceptance or signature page of documents, or the closing slide of a deck. Black seal on light, white seal on dark.
 - **Fonts** are set per case through `--font-display` and `--font-body`. Do not hardcode font names anywhere else.
 
 ## 3. Colour rules
