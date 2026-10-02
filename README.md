@@ -23,3 +23,7 @@ House style and templates for FAIM client proposals.
 
 Documents: white page, black logo, black ink, FAIM green `#6FBD44` for fills, `#2F7A1E` whenever green text sits on white.
 Interactive technology presentation: void `#040705`, white logo, FAIM green, holographic shimmer.
+
+## Standalone files
+
+`dist/` holds copies of both HTML templates with the logo, icon and seal embedded inside the file, so they open correctly with nothing next to them. Rebuild them after any change with `python3 tools/build-deck.py`.

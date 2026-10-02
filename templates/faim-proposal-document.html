@@ -50,7 +50,7 @@ td.k{width:26%;font-weight:700;color:var(--ink);background:var(--surface)}
 /* Signature */
 .sign{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:6mm}
 .sign .box{border-top:1px solid var(--ink);padding-top:2mm;font-size:9.5pt;height:34mm;position:relative}
-.seal{position:absolute;right:0;top:-30mm;width:30mm;height:30mm;border-radius:50%;border:1px dashed #C9CDC6;display:grid;place-items:center;font-size:8pt;color:var(--muted);text-align:center}
+.seal{position:absolute;right:0;top:-6mm;width:32mm;opacity:.8}
 @media print{
   @page{size:A4;margin:0}
   html,body{background:#fff;padding:0}
@@ -230,7 +230,7 @@ td.k{width:26%;font-weight:700;color:var(--ink);background:var(--surface)}
   <p>By signing below, [Client Legal Name] accepts this proposal and the General Terms and Conditions.</p>
   <div class="sign">
     <div class="box"><b>For [Client Legal Name]</b><br>Name:<br>Title:<br>Date:<br>Signature:</div>
-    <div class="box"><div class="seal">FAIM seal<br>[assets/faim-seal.png]</div><b>For [FAIM legal entity]</b><br>Name:<br>Title:<br>Date:<br>Signature:</div>
+    <div class="box"><img class="seal" src="../assets/faim-seal-black.png" alt="FAIM seal"><b>For [FAIM legal entity]</b><br>Name:<br>Title:<br>Date:<br>Signature:</div>
   </div>
   <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
 </section>
