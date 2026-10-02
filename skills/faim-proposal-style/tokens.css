@@ -10,7 +10,7 @@
   --ink: #0A0A0A;          /* headlines, dark tiles, primary numbers */
   --ink-2: #2B2E2A;        /* body copy */
   --muted: #6B7068;        /* sublines, captions, footer */
-  --accent: #54DF38;       /* FAIM green, sampled from the identity file. Fills and marks only */
+  --accent: #6FBD44;       /* FAIM green, sampled from the identity file. Fills and marks only */
   --accent-text: #2F7A1E;  /* green that passes 4.5:1 on white, for eyebrows and small text */
   --accent-tint: #EDFBE9;  /* status tags, highlight strips */
   --surface: #F4F5F3;      /* soft cards */
@@ -29,4 +29,24 @@
   --slide-h: 750px;
   --margin: 56px;
   --gutter: 20px;
+}
+
+/* Technology mode: interactive HTML presentations only.
+   Printed and Word documents stay on the white tokens above. */
+.tech, :root[data-mode="tech"] {
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", monospace;
+  --void: #040705;                     /* page */
+  --ink: #F2F5F0;                      /* headlines */
+  --ink-2: rgba(242,245,240,.78);      /* body */
+  --muted: rgba(242,245,240,.58);      /* sublines, captions */
+  --accent: #6FBD44;                   /* FAIM green, passes 8:1 on void */
+  --accent-hi: #8FE060;                /* holographic highlight only */
+  --holo-2: #2FB8A6;                   /* holographic shift only, never a UI colour */
+  --glass: rgba(242,245,240,.045);
+  --glass-2: rgba(242,245,240,.08);
+  --edge: rgba(242,245,240,.11);
+  --radius: 16px;
+  --ease: cubic-bezier(.22,1,.36,1);
 }

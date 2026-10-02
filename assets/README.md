@@ -1,11 +1,12 @@
 # FAIM assets
 
-| File | Status | Use |
+| File | Source | Use |
 |---|---|---|
-| `faim-logo-primary.png` | In place. Pulled from the brand identity file (4109 x 1561). | Black wordmark with tagline, for white pages. |
-| `faim-mark.svg` | In place. A simplified vector drawing of the connector, made for this kit. | Small uses only: bullets, placeholder corners. Swap in the master vector when it's ready. |
-| `faim-logo-primary.svg` | Missing. | The master vector logo. Export it from the .ai file and drop it in here. |
-| `faim-logo-white.svg` | Missing. | White wordmark for black panels. |
-| `faim-seal.png` | Missing. | Seal for the acceptance page. Transparent PNG, at least 600px square. |
+| `faim-logo-black.png` | The original FAIM logo you supplied (transparent, 564 x 209). | White and light surfaces. |
+| `faim-logo-white.png` | The same file with the black letters set to white. The connector, the shape and the size are unchanged. | Black and dark surfaces. |
+| `faim-icon.svg` | `icon.ai`, exported as a vector, with the page cropped to the icon. | Hero use, case by case, at most once per deck or document. |
+| `faim-seal.png` | Missing. | Acceptance page only. Supply it as a transparent PNG, at least 600px square. |
 
-Both templates load assets from `../assets/`. Keep the same file names when you swap a file in and nothing else needs to change.
+Rules: never stretch, recolour, redraw or add effects. Set only the height or the width. See section 2 of `skills/faim-proposal-style/SKILL.md`.
+
+If you have a higher resolution master of the logo (SVG or a PNG 2000px or wider), replace both PNGs and keep the file names. The templates pick the files up without any other change.

@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const {Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,WidthType,BorderStyle,ImageRun,AlignmentType,Header,Footer,PageNumber,ShadingType,PageBreak,TabStopType}=require('docx');
 const INK='0A0A0A',BODY='2B2E2A',MUTED='6B7068',GREEN='2F7A1E',LINE='E2E4E0',SURF='F4F5F3',FONT='Plus Jakarta Sans';
-const logo=fs.readFileSync(path.join(__dirname,'../assets/faim-logo-primary.png'));
+const logo=fs.readFileSync(path.join(__dirname,'../assets/faim-logo-black.png'));
 const r=(t,o={})=>new TextRun({text:t,font:FONT,size:21,color:BODY,...o});
 const p=(c,o={})=>new Paragraph({children:Array.isArray(c)?c:[r(c)],spacing:{after:140,line:300},...o});
 const h1=t=>new Paragraph({children:[r(t,{size:38,bold:true,color:INK})],spacing:{before:360,after:200},border:{bottom:{style:BorderStyle.SINGLE,size:6,color:INK,space:4}}});
@@ -16,7 +16,7 @@ const table=(rows,{head,kv,widths}={})=>new Table({width:{size:100,type:WidthTyp
 const brk=()=>new Paragraph({children:[new PageBreak()]});
 
 const cover=[
- new Paragraph({children:[new ImageRun({data:logo,type:'png',transformation:{width:200,height:76}})],spacing:{before:400,after:2400}}),
+ new Paragraph({children:[new ImageRun({data:logo,type:'png',transformation:{width:216,height:80}})],spacing:{before:400,after:2400}}),
  ...[['[Client Legal Name]',{size:48,bold:true,color:INK}],['[Project Name] at [Event]: [City Year]',{size:26,bold:true,color:INK}],['',{}],
    ['[Format, e.g. Interactive Stand Experience]',{bold:true,color:INK}],['From Concept to Event Delivery',{bold:true,color:INK}],['Version [0.0]',{}],['[Day Month Year]',{}],['',{}],['CONFIDENTIAL',{bold:true,color:INK}],['',{}],
    ['[FAIM legal entity]',{color:MUTED,size:18}],['Company Registration No. [000000]',{color:MUTED,size:18}],['[Address], Kingdom of Bahrain',{color:MUTED,size:18}],['Telephone: [+973 0000 0000]',{color:MUTED,size:18}],['Email: [hello@faimglobal.com]',{color:MUTED,size:18}]]
@@ -72,7 +72,7 @@ const body=[
  table([['For [Client Legal Name]','For [FAIM legal entity]  ·  [FAIM seal]'],['Name:\nTitle:\nDate:\nSignature:\n\n','Name:\nTitle:\nDate:\nSignature:\n\n']],{head:false,widths:[50,50]}),
 ];
 
-const header=new Header({children:[new Paragraph({tabStops:[{type:TabStopType.RIGHT,position:9000}],children:[new ImageRun({data:logo,type:'png',transformation:{width:120,height:46}}),new TextRun({children:['\t',PageNumber.CURRENT],font:FONT,size:18,color:MUTED})]})]});
+const header=new Header({children:[new Paragraph({tabStops:[{type:TabStopType.RIGHT,position:9000}],children:[new ImageRun({data:logo,type:'png',transformation:{width:124,height:46}}),new TextRun({children:['\t',PageNumber.CURRENT],font:FONT,size:18,color:MUTED})]})]});
 const footer=new Footer({children:[new Paragraph({tabStops:[{type:TabStopType.CENTER,position:4500},{type:TabStopType.RIGHT,position:9000}],children:[r('[FAIM legal entity]\tConfidential\t[DD-MM-YY]',{size:17,color:MUTED})]})]});
 const margin={top:1300,bottom:1200,left:1420,right:1420};
 const doc=new Document({creator:'FAIM',title:'FAIM Proposal Document',

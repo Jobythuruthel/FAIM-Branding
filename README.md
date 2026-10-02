@@ -6,7 +6,7 @@ House style and templates for FAIM client proposals.
 
 - `skills/faim-proposal-style/SKILL.md`: the style skill. It covers the grid, type, colour rules, components, image placeholders, copy style and the anti AI look checklist.
 - `skills/faim-proposal-style/tokens.css`: the design tokens, used as the source of truth.
-- `templates/faim-proposal-summary.html`: an interactive 16:9 summary deck with 15 slides. Use the arrow keys, swipe, or the buttons to move between slides. Print to PDF and you get one slide per page.
+- `templates/faim-proposal-summary.html`: the interactive 16:9 technology presentation with 15 slides, in dark mode with FAIM Motion. Edit `templates/src/faim-proposal-summary.src.html`, then run `python3 tools/build-deck.py`. Use the arrow keys, swipe, or the buttons to move between slides. Print to PDF and you get one slide per page.
 - `templates/faim-proposal-document.html`: the long form A4 proposal. It prints to PDF.
 - `templates/faim-proposal-document.docx`: the same long form proposal for Word. Rebuild it with `NODE_PATH=$(npm root -g) node tools/build-docx.js`.
 - `assets/`: the logo, mark and seal. See `assets/README.md`.
@@ -21,4 +21,5 @@ House style and templates for FAIM client proposals.
 
 ## Colour in one line
 
-White page, black ink, FAIM green `#54DF38` for fills, `#2F7A1E` whenever green text sits on white.
+Documents: white page, black logo, black ink, FAIM green `#6FBD44` for fills, `#2F7A1E` whenever green text sits on white.
+Interactive technology presentation: void `#040705`, white logo, FAIM green, holographic shimmer.
