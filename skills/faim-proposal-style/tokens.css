@@ -1,0 +1,32 @@
+/* FAIM proposal style: design tokens
+   Source of truth for both templates. Fonts are swapped per case. */
+:root {
+  /* Type: case by case. Brand default is Plus Jakarta Sans, tagline Montserrat. */
+  --font-display: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Colour: one ink, one accent, one tint, one hairline */
+  --paper: #FFFFFF;
+  --ink: #0A0A0A;          /* headlines, dark tiles, primary numbers */
+  --ink-2: #2B2E2A;        /* body copy */
+  --muted: #6B7068;        /* sublines, captions, footer */
+  --accent: #54DF38;       /* FAIM green, sampled from the identity file. Fills and marks only */
+  --accent-text: #2F7A1E;  /* green that passes 4.5:1 on white, for eyebrows and small text */
+  --accent-tint: #EDFBE9;  /* status tags, highlight strips */
+  --surface: #F4F5F3;      /* soft cards */
+  --line: #E2E4E0;         /* hairlines and card borders */
+
+  /* Shape */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --hair: 1px;
+
+  /* Space (8pt base) */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+
+  /* Slide geometry (16:9 at 1334 x 750) */
+  --slide-w: 1334px;
+  --slide-h: 750px;
+  --margin: 56px;
+  --gutter: 20px;
+}

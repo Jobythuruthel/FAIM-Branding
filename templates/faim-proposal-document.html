@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAIM Proposal Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* Tokens: mirror of skills/faim-proposal-style/tokens.css */
+:root{
+  --font-display:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+  --paper:#FFFFFF;--ink:#0A0A0A;--ink-2:#2B2E2A;--muted:#6B7068;
+  --accent:#54DF38;--accent-text:#2F7A1E;--accent-tint:#EDFBE9;
+  --surface:#F4F5F3;--line:#E2E4E0;--radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ECEDEB}
+body{font-family:var(--font-body);color:var(--ink-2);font-size:10.5pt;line-height:1.5;-webkit-font-smoothing:antialiased;padding:24px 16px}
+.page{width:210mm;min-height:297mm;margin:0 auto 24px;background:var(--paper);padding:22mm 25mm 26mm;position:relative;box-shadow:0 0 0 1px var(--line)}
+.page .logo{height:13mm}
+.page .pn{position:absolute;right:25mm;top:22mm;font-size:9pt;color:var(--muted)}
+.page .ft{position:absolute;left:25mm;right:25mm;bottom:12mm;display:flex;justify-content:space-between;font-size:8.5pt;color:var(--muted)}
+h1{font-family:var(--font-display);font-size:19pt;font-weight:700;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--ink);margin:12mm 0 5mm}
+h1:first-of-type{margin-top:9mm}
+h2{font-size:12.5pt;font-weight:700;color:var(--ink);margin:6mm 0 2.5mm}
+p{margin-bottom:3mm}
+ul{margin:0 0 4mm 6mm}
+li{margin-bottom:2mm;padding-left:2mm}
+li::marker{color:var(--accent-text)}
+b,strong{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin:2mm 0 5mm;font-size:10pt}
+td,th{border:1px solid var(--line);padding:3mm 3.5mm;vertical-align:top;text-align:left}
+th{background:var(--ink);color:#fff;font-weight:700}
+td.k{width:26%;font-weight:700;color:var(--ink);background:var(--surface)}
+.toc a{display:flex;color:var(--ink);text-decoration:none;font-weight:600;font-style:italic;padding:1.6mm 0}
+.toc a span{flex:1;border-bottom:1px dotted #B9BDB5;margin:0 2mm 1.2mm}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:4mm 5mm;font-size:9.5pt}
+.cap{font-size:9pt;font-style:italic;color:var(--muted)}
+.ph{background:var(--surface);border:1px dashed #C9CDC6;border-radius:var(--radius);display:grid;place-items:center;color:var(--muted);font-size:9pt;text-align:center}
+/* Cover */
+.cover .logo{height:18mm;margin-top:10mm}
+.cover .blk{position:absolute;right:25mm;top:110mm;text-align:right;width:130mm}
+.cover .client{font-size:24pt;font-weight:800;color:var(--ink)}
+.cover .bar{height:3px;width:40mm;background:var(--accent);margin:4mm 0 4mm auto}
+.cover .proj{font-size:13pt;font-weight:700;color:var(--ink)}
+.cover .meta{font-size:10pt;margin-top:6mm;line-height:1.6}
+.cover .addr{font-size:9pt;color:var(--muted);margin-top:8mm;line-height:1.6}
+/* Signature */
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:6mm}
+.sign .box{border-top:1px solid var(--ink);padding-top:2mm;font-size:9.5pt;height:34mm;position:relative}
+.seal{position:absolute;right:0;top:-30mm;width:30mm;height:30mm;border-radius:50%;border:1px dashed #C9CDC6;display:grid;place-items:center;font-size:8pt;color:var(--muted);text-align:center}
+@media print{
+  @page{size:A4;margin:0}
+  html,body{background:#fff;padding:0}
+  .page{margin:0;box-shadow:none;page-break-after:always;height:297mm}
+}
+@media screen and (max-width:820px){
+  .page{width:100%;min-height:0;padding:12mm 8mm 22mm}
+  .page .pn{right:8mm;top:12mm}
+  .page .ft{left:8mm;right:8mm}
+  .cover .blk{position:static;width:auto;margin-top:30mm}
+  .sign{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM">
+  <div class="blk">
+    <div class="client">[Client Legal Name]</div>
+    <div class="bar"></div>
+    <div class="proj">[Project Name] at [Event]: [City Year]</div>
+    <div class="meta"><b>[Format, e.g. Interactive Stand Experience]</b><br><b>From Concept to Event Delivery</b><br>Version [0.0]<br>[Day Month Year]</div>
+    <div class="meta"><b>CONFIDENTIAL</b></div>
+    <div class="addr">[FAIM legal entity]<br>Company Registration No. [000000]<br>[Address line 1]<br>[Address line 2], Kingdom of Bahrain<br>Telephone: [+973 0000 0000]<br>Email: [hello@faimglobal.com]</div>
+  </div>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- CONTENTS -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">2</div>
+  <h1>Table of Contents</h1>
+  <div class="toc">
+    <a href="#contact">Contact Information<span></span>3</a>
+    <a href="#about">About FAIM<span></span>3</a>
+    <a href="#summary">Executive Summary<span></span>4</a>
+    <a href="#event">About [Event]<span></span>4</a>
+    <a href="#experience">The Experience<span></span>5</a>
+    <a href="#scope">Scope of Services<span></span>6</a>
+    <a href="#deliverables">Deliverables Summary<span></span>6</a>
+    <a href="#timeline">Proposed Timeline<span></span>7</a>
+    <a href="#inputs">[Client] Inputs and Dependencies<span></span>7</a>
+    <a href="#exclusions">Exclusions and Out of Scope<span></span>7</a>
+    <a href="#investment">Your Investment<span></span>8</a>
+    <a href="#acceptance">Acceptance<span></span>8</a>
+  </div>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- CONTACT + ABOUT -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">3</div>
+  <h1 id="contact">Contact Information</h1>
+  <table>
+    <tr><th>Primary</th><th>Secondary</th></tr>
+    <tr><td><b>[Full Name]</b><br>[Title]<br>[name@faimglobal.com]<br>[+973 0000 0000]</td><td><b>[Full Name]</b><br>[Title]<br>[name@faimglobal.com]<br>[+973 0000 0000]</td></tr>
+  </table>
+  <h1 id="about">About FAIM</h1>
+  <p>FAIM (Future Artificial Intelligence Media) builds interactive technology for events and exhibitions across Bahrain and Saudi Arabia. [One sentence on when and how the company started.]</p>
+  <p>[One paragraph on the team: size, disciplines, what sits in house.]</p>
+  <p>[One paragraph on what clients come to FAIM for, in plain words, with one proof point.]</p>
+  <h2>Capabilities and Credentials</h2>
+  <ul>
+    <li><b>[Capability]:</b> [What it is and one named example of it in use.]</li>
+    <li><b>[Capability]:</b> [What it is and one named example of it in use.]</li>
+    <li><b>[Capability]:</b> [What it is and one named example of it in use.]</li>
+    <li><b>One accountable team:</b> FAIM is responsible for delivery end to end: content, design, platform, testing and on site support.</li>
+  </ul>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- SUMMARY + EVENT -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">4</div>
+  <h1 id="summary">Executive Summary</h1>
+  <p>[Event] takes place on [Day Date] at [Venue]. [Who hosts it, the theme, and who attends, with a number.] [Why this client has a natural claim on this room.]</p>
+  <p>This proposal sets out [Project Name]: [what it is in one sentence]. Visitors [how they take part, in one sentence], and their [score, photo, result] appears live on the stand screens.</p>
+  <p>Every visitor registers to take part, so [Client] leaves with three things: a clean, consented contact list; a live screen that draws people to the stand all day; and a list of warm leads delivered to the sales team the next working day.</p>
+  <p>The event date is fixed. To deliver on [Date], we ask [Client] to sign this proposal by <b>[Day Date]</b>, so the content review can start the following week.</p>
+  <h1 id="event">About [Event]</h1>
+  <table>
+    <tr><td class="k">Date</td><td>[Day Date Year]</td></tr>
+    <tr><td class="k">Venue</td><td>[Venue, City]</td></tr>
+    <tr><td class="k">Host</td><td>[Host organisation]</td></tr>
+    <tr><td class="k">Theme</td><td>"[Theme]"</td></tr>
+    <tr><td class="k">Audience</td><td>[000+] participants: [who they are, in plain words]</td></tr>
+    <tr><td class="k">Sponsors</td><td>[Names and tiers], as at [Date]</td></tr>
+  </table>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">5</div>
+  <h1 id="experience">The Experience</h1>
+  <p>[Two sentences on what a visitor sees and does in the first ten seconds.]</p>
+  <div class="ph" style="aspect-ratio:16/9;margin:4mm 0 2mm">16:9 · Concept screen</div>
+  <p class="cap">Concept screen. Final design follows the content review.</p>
+  <h2>The visitor journey</h2>
+  <table>
+    <tr><th style="width:12%">Step</th><th style="width:28%">Stage</th><th>What happens</th></tr>
+    <tr><td>1</td><td><b>Start</b></td><td>[Tap the screen or scan the QR code.]</td></tr>
+    <tr><td>2</td><td><b>Register</b></td><td>[Name, contact, role and consent.]</td></tr>
+    <tr><td>3</td><td><b>Play</b></td><td>[N short rounds built on the client's story.]</td></tr>
+    <tr><td>4</td><td><b>Result</b></td><td>[Score, rank and the follow up question.]</td></tr>
+  </table>
+  <div class="note"><b>Data:</b> [Client] owns all visitor data. Consent is recorded per purpose, and FAIM processes data under a data processing agreement.</div>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- SCOPE + DELIVERABLES -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">6</div>
+  <h1 id="scope">Scope of Services</h1>
+  <h2>Phase 1: Discovery and content review</h2>
+  <p>[What FAIM does, what the client reviews, what gets signed off.]</p>
+  <h2>Phase 2: Design and build</h2>
+  <p>[What gets built, how many rounds of changes, what is included.]</p>
+  <h2>Phase 3: Platform and security</h2>
+  <p>[Hosting, domain, hardening, admin access.]</p>
+  <h2>Phase 4: Testing and sign off</h2>
+  <p>[Which tests run and who signs off.]</p>
+  <h1 id="deliverables">Deliverables Summary</h1>
+  <table>
+    <tr><th style="width:40%">Deliverable</th><th>Detail</th></tr>
+    <tr><td><b>[Deliverable]</b></td><td>[Format, quantity, when]</td></tr>
+    <tr><td><b>[Deliverable]</b></td><td>[Format, quantity, when]</td></tr>
+    <tr><td><b>[Deliverable]</b></td><td>[Format, quantity, when]</td></tr>
+    <tr><td><b>[Deliverable]</b></td><td>[Format, quantity, when]</td></tr>
+  </table>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- TIMELINE + INPUTS + EXCLUSIONS -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">7</div>
+  <h1 id="timeline">Proposed Timeline</h1>
+  <table>
+    <tr><th style="width:30%">Date</th><th>Milestone</th></tr>
+    <tr><td>[Day Date]</td><td><b>Proposal signed, first payment</b></td></tr>
+    <tr><td>[Day Date]</td><td>Content workshop</td></tr>
+    <tr><td>[Day Date]</td><td><b>Scope signed off</b></td></tr>
+    <tr><td>[Day Date]</td><td>Content freeze</td></tr>
+    <tr><td>[Day Date]</td><td>Testing sign off, second payment</td></tr>
+    <tr><td>[Day Date]</td><td><b>Live at [Event]</b></td></tr>
+  </table>
+  <h1 id="inputs">[Client] Inputs and Dependencies</h1>
+  <ul>
+    <li>Consolidated content feedback by [Day Date].</li>
+    <li>Stand concept, size and space confirmed by [Day Date].</li>
+    <li>Legal sign off on consent wording, prize terms and disclaimer.</li>
+  </ul>
+  <h1 id="exclusions">Exclusions and Out of Scope</h1>
+  <ul>
+    <li>[Item not included, stated plainly.]</li>
+    <li>[Item not included, stated plainly.]</li>
+  </ul>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+<!-- INVESTMENT + ACCEPTANCE -->
+<section class="page">
+  <img class="logo" src="../assets/faim-logo-primary.png" alt="FAIM"><div class="pn">8</div>
+  <h1 id="investment">Your Investment</h1>
+  <table>
+    <tr><th>Item</th><th style="width:30%;text-align:right">Amount</th></tr>
+    <tr><td>[Project Name], phases 1 to 7</td><td style="text-align:right">[CUR 0,000]</td></tr>
+    <tr><td>Introductory offer saving</td><td style="text-align:right">([CUR 0,000])</td></tr>
+    <tr><td><b>Total, excluding VAT</b></td><td style="text-align:right"><b>[CUR 0,000]</b></td></tr>
+    <tr><td>VAT at [00]%</td><td style="text-align:right">[CUR 000]</td></tr>
+    <tr><td><b>Total, including VAT</b></td><td style="text-align:right"><b>[CUR 0,000]</b></td></tr>
+  </table>
+  <p><b>Payments:</b> [CUR 0,000] on acceptance, [CUR 0,000] on testing sign off. [N] day payment terms.</p>
+  <h1 id="acceptance">Acceptance</h1>
+  <p>By signing below, [Client Legal Name] accepts this proposal and the General Terms and Conditions.</p>
+  <div class="sign">
+    <div class="box"><b>For [Client Legal Name]</b><br>Name:<br>Title:<br>Date:<br>Signature:</div>
+    <div class="box"><div class="seal">FAIM seal<br>[assets/faim-seal.png]</div><b>For [FAIM legal entity]</b><br>Name:<br>Title:<br>Date:<br>Signature:</div>
+  </div>
+  <div class="ft"><span>[FAIM legal entity]</span><span>Confidential</span><span>[DD-MM-YY]</span></div>
+</section>
+
+</body>
+</html>
