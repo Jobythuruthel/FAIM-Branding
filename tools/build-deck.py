@@ -23,7 +23,7 @@ def embed(html):
     return html.replace("</body>", js + "\n</body>")
 
 dist = root / "dist"; dist.mkdir(exist_ok=True)
-for n in ["faim-proposal-summary.html", "faim-proposal-document.html"]:
+for n in ["faim-proposal-summary.html", "faim-proposal-summary-white.html", "faim-proposal-document.html"]:
     out = embed((root / "templates" / n).read_text())
     assert "../assets/" not in out
     (dist / n).write_text(out)
